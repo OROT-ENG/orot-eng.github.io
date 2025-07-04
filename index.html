@@ -2,65 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pascal Orot - Telecom Engineer</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-
   <header>
     <img src="pascal3.jpg" alt="Pascal Orot" class="profile-img">
     <h1>Pascal Ochieng Orot</h1>
     <p>BSc Telecommunication & Information Engineering</p>
-    <div class="contact-icons">
-      <a href="mailto:pascalochieng838@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/OROT-ENG" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fas fa-phone"></i> +254 740-964689</a>
-    </div>
   </header>
 
-  <section id="about">
+  <div class="nav-buttons">
+    <button class="cta-btn" onclick="showSection('about')">About Me</button>
+    <button class="cta-btn" onclick="showSection('skills')">Skills</button>
+    <button class="cta-btn" onclick="showSection('projects')">Projects</button>
+    <button class="cta-btn" onclick="showSection('gallery')">Gallery</button>
+    <button class="cta-btn" onclick="showSection('education')">Education</button>
+    <button class="cta-btn" onclick="showSection('cv')">Download CV</button>
+    <button class="cta-btn" onclick="showSection('contact')">Contact</button>
+  </div>
+
+  <section id="about" class="hidden" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>I am a passionate graduate engineer with a strong foundation in telecommunication systems, ICT, and electrical installations. I'm driven by innovation in power safety and network infrastructure.</p>
+    <p>I’m a passionate engineering graduate with hands-on experience in electrical installation, system repair, and ICT support. I'm driven by innovation in power systems, network infrastructure, and sustainability.</p>
   </section>
 
-  <section id="skills">
-    <h2><i class="fas fa-tools"></i> Skills</h2>
+  <section id="skills" class="hidden" data-aos="fade-right">
+    <h2>Skills</h2>
     <ul>
-      <li>Telecommunication Networks & Structured Cabling</li>
       <li>Electrical Installation & Maintenance</li>
       <li>Generators, Solar Units, CCTV, Alarm Systems</li>
       <li>Wi-Fi Networks, PCB Design, Arduino</li>
+      <li>Telecommunication Networks & Structured Cabling</li>
       <li>Building Code Compliance (NCA Trained)</li>
     </ul>
+    <button class="cta-btn" onclick="showSection('projects')">See My Projects</button>
   </section>
 
-  <section id="projects">
-    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-    <p><strong>IoT-Based Cattle Health Monitoring System</strong><br>
-    Developed a real-time embedded system using wireless sensors and fault detection algorithms.</p>
-
-    <p><strong>Surveillance & Power Systems – Savotech</strong><br>
-    Installed and tested solar, CCTV, and alarm systems for clients across Bondo region.</p>
+  <section id="projects" class="hidden" data-aos="fade-left">
+    <h2>Projects</h2>
+    <p><strong>IoT-Based Cattle Health Monitoring System</strong><br>Real-time embedded system with wireless sensors and fault detection algorithms.</p>
+    <p><strong>Electrical & Surveillance Systems – Savotech</strong><br>Installed and tested solar, CCTV, and alarm systems for real-world clients.</p>
+    <button class="cta-btn" onclick="showSection('cv')">Hire Me</button>
   </section>
 
-  <section id="education">
-    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-    <p><strong>BSc. Telecommunication & Information Engineering</strong><br>
-    Dedan Kimathi University of Technology (2025)</p>
+  <section id="gallery" class="hidden" data-aos="fade-up">
+    <h2>Project Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="project1.jpg" alt="Project 1">
+        <p>IoT Cattle Monitoring</p>
+      </div>
+      <div class="gallery-item">
+        <img src="project2.jpg" alt="Project 2">
+        <p>Solar Installation</p>
+      </div>
+      <div class="gallery-item">
+        <img src="project3.jpg" alt="Project 3">
+        <p>CCTV Setup</p>
+      </div>
+    </div>
+  </section>
 
+  <section id="education" class="hidden" data-aos="fade-up">
+    <h2>Education</h2>
+    <p><strong>BSc. Telecommunication & Information Engineering</strong><br>Dedan Kimathi University of Technology, 2025</p>
     <p><strong>KCSE</strong> – Siger Mixed Secondary School (B Plain)</p>
   </section>
 
-  <section id="cv">
-    <h2><i class="fas fa-file-download"></i> Download My CV</h2>
-    <a href="PASCAL OCHIENG OROT CV.docx" download class="cv-btn">📄 PASCAL OCHIENG OROT CV.docx</a>
+  <section id="cv" class="hidden" data-aos="zoom-in">
+    <h2>Download My CV</h2>
+    <a href="PASCAL OCHIENG OROT CV.docx" download class="cv-btn">📄 Download CV (.docx)</a>
+  </section>
+
+  <section id="contact" class="hidden" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <<form action="https://formspree.io/f/mrbkdvbd" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="cta-btn">Send Message</button>
+    </form>
   </section>
 
   <footer>
     <p>© 2025 Pascal Orot | Telecom & Electrical Engineer</p>
   </footer>
 
+  <button id="scrollTopBtn" onclick="scrollToTop()">⬆</button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    window.onscroll = function () {
+      document.getElementById("scrollTopBtn").style.display =
+        window.scrollY > 300 ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
