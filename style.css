@@ -202,3 +202,31 @@ footer {
     width: 90%;
   }
 }
+.cert-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+.cert-list li {
+  background: #f4f4f4;
+  margin: 10px 0;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.cert-list li:hover {
+  background: #e0e0e0;
+}
+
+.cert-list a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.cert-list a:hover {
+  text-decoration: underline;
+}
